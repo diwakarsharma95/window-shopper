@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="window_shopper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="window_shopper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,25 +27,47 @@
                                     <constraint firstAttribute="width" constant="60" id="lFP-PW-nld"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jno-wl-bC1" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
-                                <rect key="frame" x="57" y="158" width="261" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jno-wl-bC1" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="150" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gxh-0q-dsE"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMt-86-DAX" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="215" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="y5f-vj-LuS"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XWd-4G-1Xd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0Oy-x4-TAf"/>
+                            <constraint firstItem="tMt-86-DAX" firstAttribute="leading" secondItem="jno-wl-bC1" secondAttribute="leading" id="3jb-8S-UFf"/>
+                            <constraint firstItem="tMt-86-DAX" firstAttribute="top" secondItem="jno-wl-bC1" secondAttribute="bottom" constant="25" id="DK6-4n-qba"/>
                             <constraint firstItem="2Xu-m5-iCf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H5M-87-jXa"/>
+                            <constraint firstItem="jno-wl-bC1" firstAttribute="top" secondItem="2Xu-m5-iCf" secondAttribute="bottom" constant="35" id="Hje-9V-AkX"/>
                             <constraint firstItem="XWd-4G-1Xd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nf8-lK-eAk"/>
                             <constraint firstItem="XWd-4G-1Xd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OWq-ue-aY5"/>
                             <constraint firstItem="XWd-4G-1Xd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="T2d-aD-frE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jno-wl-bC1" secondAttribute="trailing" constant="20" id="bRO-ux-Hoc"/>
+                            <constraint firstItem="jno-wl-bC1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cnF-iX-NJY"/>
                             <constraint firstItem="2Xu-m5-iCf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="jIT-Ds-kK4"/>
+                            <constraint firstItem="tMt-86-DAX" firstAttribute="trailing" secondItem="jno-wl-bC1" secondAttribute="trailing" id="qRo-Ws-mYN"/>
+                            <constraint firstItem="tMt-86-DAX" firstAttribute="height" secondItem="jno-wl-bC1" secondAttribute="height" id="sBg-LJ-9pd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="priceTxt" destination="tMt-86-DAX" id="3XM-SZ-qTA"/>
+                        <outlet property="wageTxt" destination="jno-wl-bC1" id="Hhz-hw-FvB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
